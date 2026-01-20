@@ -1,6 +1,6 @@
 # Panel de Tareas
 
-Aplicación web construida con Next.js 14 (App Router), Supabase y TailwindCSS para gestionar tareas personales con autenticación y tablero Kanban.
+Aplicación web construida con Next.js 14 (App Router), Supabase y TailwindCSS para gestionar tareas personales con autenticación.
 
 ## Requisitos
 
@@ -13,8 +13,6 @@ Aplicación web construida con Next.js 14 (App Router), Supabase y TailwindCSS p
 2. En la sección **SQL Editor**, ejecuta el script en [`supabase/tasks.sql`](supabase/tasks.sql).
 3. Ve a **Authentication > Providers** y habilita el provider **Email**.
 4. Copia las credenciales de **Project Settings > API**.
-
-> Si ya tienes la tabla creada, vuelve a ejecutar el script para añadir la columna `status`, la política de update y el trigger de `updated_at`.
 
 ## Configuración local
 
@@ -44,4 +42,4 @@ La app estará disponible en `http://localhost:3000`.
 ## Rutas principales
 
 - `/login`: Login con email y contraseña.
-- `/dashboard`: Panel protegido con tablero Kanban y CRUD básico de tareas.
+- `/dashboard`: Panel protegido con CRUD básico de tareas.

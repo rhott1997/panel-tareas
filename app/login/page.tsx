@@ -33,22 +33,13 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 text-slate-100">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl" />
-        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl" />
-      </div>
-      <div className="relative w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-2xl shadow-black/30">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500 text-lg font-semibold">
-            PT
-          </div>
-          <div>
-            <h1 className="text-2xl font-semibold">Panel de Tareas</h1>
-            <p className="text-xs text-slate-400">Accede a tu tablero Kanban</p>
-          </div>
-        </div>
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+    <main className="flex min-h-screen items-center justify-center px-4">
+      <div className="w-full max-w-md rounded-2xl bg-slate-900/70 p-8 shadow-lg">
+        <h1 className="text-2xl font-semibold">Panel de Tareas</h1>
+        <p className="mt-2 text-sm text-slate-300">
+          Inicia sesión para gestionar tus tareas.
+        </p>
+        <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="text-sm text-slate-200" htmlFor="email">
               Email
@@ -58,8 +49,7 @@ export default function LoginPage() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-slate-100 focus:border-indigo-400 focus:outline-none"
-              placeholder="tu@email.com"
+              className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-slate-100 focus:border-slate-500 focus:outline-none"
               required
             />
           </div>
@@ -72,19 +62,18 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-slate-100 focus:border-indigo-400 focus:outline-none"
-              placeholder="••••••••"
+              className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-slate-100 focus:border-slate-500 focus:outline-none"
               required
             />
           </div>
           {error ? (
-            <p className="rounded-xl border border-rose-500/50 bg-rose-500/10 px-3 py-2 text-sm text-rose-100">
+            <p className="rounded-lg border border-rose-500/50 bg-rose-500/10 px-3 py-2 text-sm text-rose-100">
               {error}
             </p>
           ) : null}
           <button
             type="submit"
-            className="w-full rounded-xl bg-indigo-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-slate-600"
+            className="w-full rounded-lg bg-indigo-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-slate-600"
             disabled={isPending}
           >
             {isPending ? 'Accediendo...' : 'Entrar'}
